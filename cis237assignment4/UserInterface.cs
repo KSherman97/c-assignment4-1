@@ -37,7 +37,7 @@ namespace cis237assignment4
             Console.WriteLine("1. Add a new droid to the system");
             Console.WriteLine("2. Print the list of droids out");
             Console.WriteLine("3. Sort droids by type");
-            Console.WriteLine("4. ");
+            Console.WriteLine("4. Sort droids by cost");
             Console.WriteLine("5. Exit the program");
         }
 
