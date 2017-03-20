@@ -4,7 +4,7 @@
 
 ## Author
 
-David Barnes
+Kyle Sherman
 
 ## Description
 
@@ -92,7 +92,7 @@ Algorithms book by Sedgewick and Wayne
 
 ## Known Problems, Issues, And/Or Errors in the Program
 
-None that I know of
+sorting by price wont work unless you sort by type first.
 
 ## Assignment 3 Description for reference
 
