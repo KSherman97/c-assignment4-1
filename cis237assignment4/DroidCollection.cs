@@ -213,6 +213,15 @@ namespace cis237assignment4
         // sort the droidarray by cost 
         public void DroidSortByCost()
         {
+
+            foreach (IDroid droid in droidCollection)
+            {
+                if (droid != null)
+                {
+                    droid.CalculateTotalCost();
+                }
+            }
+
             MergeSort merge = new MergeSort();
             Droid[] SortArray = new Droid[nonNullIndexes(droidCollection)];
             int i = 0;
