@@ -24,11 +24,11 @@ namespace cis237assignment4
             UserInterface userInterface = new UserInterface(droidCollection);
 
             // add some test droids 
-            droidCollection.Add("Agrinium", "Protocol", "Gold", 12000000);
+            droidCollection.Add("Agrinium", "Protocol", "Gold", 1);
 
             droidCollection.Add("Inoxium", "Janitorial", "Orange", true, false, true, true, true);
 
-            droidCollection.Add("Neuranium", "Astromech", "Red", true, true, false, true, 100);
+            droidCollection.Add("Neuranium", "Astromech", "Red", true, true, false, true, 10);
 
             droidCollection.Add("Lamanium", "Utility", "Silver", true, true, true);
 
@@ -36,17 +36,10 @@ namespace cis237assignment4
 
             droidCollection.Add("Durasteel", "Astromech", "Blue", true, true, true, true, 50);
 
-            droidCollection.Add("Inoxinum", "Protocol", "Orange", 1500000);
+            droidCollection.Add("Inoxinum", "Protocol", "Orange", 15);
 
-            droidCollection.Add("Neuranium", "Protocol", "Silver", 6000000);
+            droidCollection.Add("Neuranium", "Protocol", "Silver", 60);
 
-            droidCollection.Add("Agrinium", "Utility", "Gold", false, true, true);
-
-            droidCollection.Add("Laminanium", "Astromech", "Red", false, true, true, true, 5);
-
-            droidCollection.Add("Durasteel", "Utility", "Orange", true, false, true);
-
-            droidCollection.Add("Durasteel", "Protocol", "Blue", 2000000);
 
             //Display the main greeting for the program
             userInterface.DisplayGreeting();
