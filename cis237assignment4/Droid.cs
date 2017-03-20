@@ -11,11 +11,11 @@ namespace cis237assignment4
     {
         //some protected variables for the class
         protected string material;
-        protected string model;
+        public string model;
         protected string color;
 
         protected decimal baseCost;
-        protected decimal totalCost;
+        public decimal totalCost;
 
         //The public property for TotalCost
         public decimal TotalCost

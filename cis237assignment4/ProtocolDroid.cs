@@ -36,5 +36,11 @@ namespace cis237assignment4
             return base.ToString() +
                 "Number Of Languages: " + this.numberOfLanguages + Environment.NewLine;
         }
+
+        //Default CompareTo() defined in Droid is sufficient
+        public override int CompareTo(Droid thatDroid)
+        {
+            return base.CompareTo(thatDroid);
+        }
     }
 }

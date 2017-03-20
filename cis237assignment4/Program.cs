@@ -71,9 +71,11 @@ namespace cis237assignment4
                     
                     case 3:
                         droidCollection.DroidSortByType();
+                        userInterface.PrintDroidList();
                         break;
                     case 4:
                         droidCollection.DroidSortByCost();
+                        userInterface.PrintDroidList();
                         break;
 
                 }

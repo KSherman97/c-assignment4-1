@@ -63,5 +63,11 @@ namespace cis237assignment4
                 "Has Fire Extinguisher: " + this.hasFireExtinguisher + Environment.NewLine +
                 "Number Of Ships: " + this.numberOfShips + Environment.NewLine;
         }
+
+        //Default CompareTo() defined in Droid is sufficient
+        public override int CompareTo(Droid thatDroid)
+        {
+            return base.CompareTo(thatDroid);
+        }
     }
 }

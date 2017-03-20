@@ -68,5 +68,11 @@ namespace cis237assignment4
                 "Has Computer Connection: " + this.hasComputerConnection + Environment.NewLine +
                 "Has Arm: " + this.hasArm + Environment.NewLine;
         }
+
+        //Default CompareTo() defined in Droid is sufficient
+        public override int CompareTo(Droid thatDroid)
+        {
+            return base.CompareTo(thatDroid);
+        }
     }
 }

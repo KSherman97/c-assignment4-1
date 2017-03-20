@@ -13,7 +13,7 @@ namespace cis237assignment4
         public DroidCollection(){}
 
         //Private variable to hold the collection of droids
-        private IDroid[] droidCollection = new IDroid[100];
+        private Droid[] droidCollection = new Droid[100];
         //Private variable to hold the length of the Collection
         private int lengthOfCollection;
 
@@ -23,7 +23,7 @@ namespace cis237assignment4
         public DroidCollection(int sizeOfCollection)
         {
             //Make new array for the collection
-            droidCollection = new IDroid[sizeOfCollection];
+            droidCollection = new Droid[sizeOfCollection];
             //set length of collection to 0
             lengthOfCollection = 0;
         }
@@ -145,18 +145,6 @@ namespace cis237assignment4
             Stack<ProtocolDroid> ProtocolStack = new Stack<ProtocolDroid>();
 
             Queue<Droid> DroidQueue = new Queue<Droid>();
-            
-            /**
-            for(int i = 0; i < nonNullIndexes(droidCollection); i++)
-            {
-                switch(droidCollection[i].Model)
-                {
-                    case "Protocol":
-                        ProtocolStack.Push((Protocol)DroidCollection[i]);
-                        break;
-                }
-            }
-            **/
             //For each droid in the droidCollection
             foreach (IDroid droid in droidCollection)
             {
@@ -212,7 +200,7 @@ namespace cis237assignment4
         }
         public void DroidSortByCost()
         {
-            IDroid[] SortArray = new Droid[nonNullIndexes(droidCollection)];
+            Droid[] SortArray = new Droid[nonNullIndexes(droidCollection)];
             int i = 0;
             while(droidCollection[i] != null)
             {
@@ -222,7 +210,7 @@ namespace cis237assignment4
 
             MergeSort<Droid>.Sort(SortArray);
             i = 0;
-            foreach(IDroid droid in SortArray)
+            foreach(Droid droid in SortArray)
             {
                 droidCollection[i] = SortArray[i];
                 i++;

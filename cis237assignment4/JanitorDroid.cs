@@ -51,5 +51,11 @@ namespace cis237assignment4
                 "Has Trash Compactor: " + this.hasTrashCompactor + Environment.NewLine +
                 "Has Vacuum: " + this.hasVacuum + Environment.NewLine;
         }
+        
+        //Default CompareTo() defined in Droid is sufficient
+        public override int CompareTo(Droid thatDroid)
+        {
+            return base.CompareTo(thatDroid);
+        }
     }
 }
