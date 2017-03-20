@@ -210,7 +210,7 @@ namespace cis237assignment4
 
             MergeSort<Droid>.Sort(SortArray);
             i = 0;
-            foreach(Droid droid in SortArray)
+            foreach (Droid droid in SortArray)
             {
                 droidCollection[i] = SortArray[i];
                 i++;

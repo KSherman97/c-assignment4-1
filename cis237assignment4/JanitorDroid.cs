@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 namespace cis237assignment4
 {
     //Class that inherits from the Utility class
-    class JanitorDroid : UtilityDroid
+    class JanitorDroid : UtilityDroid, IDroid
     {
         //Some protected variables that can be accessed in derived classes
         protected bool hasTrashCompactor;
@@ -41,7 +41,20 @@ namespace cis237assignment4
                 optionsCost += COST_PER_OPTION;
             }
 
+
+            
+
             return optionsCost;
+        }
+
+        //Overridden method to calculate the total cost. This method uses the base cost from the parent droid class,
+        //and the cost of the options of this class to create the total cost.
+        public override void CalculateTotalCost()
+        {
+            this.CalculateBaseCost();
+
+            this.totalCost = this.baseCost + this.CalculateCostOfOptions();
+            TotalCost = this.totalCost;
         }
 
         //Overridden ToString that uses the base ToString method, and appends the missing information.

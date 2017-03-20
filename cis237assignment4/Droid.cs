@@ -69,9 +69,10 @@ namespace cis237assignment4
 
         public virtual int CompareTo(Droid thatDroid)
         {
-            if (TotalCost < thatDroid.TotalCost)
+            if (TotalCost < thatDroid.totalCost)
                 return -1;
-            if (totalCost == thatDroid.TotalCost)
+
+            if (TotalCost == thatDroid.totalCost)
                 return 0;
 
             return 1;

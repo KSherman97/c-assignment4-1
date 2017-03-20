@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 namespace cis237assignment4
 {
     //Derived from the abstract class Droid. Can be instanciated
-    class UtilityDroid : Droid
+    class UtilityDroid : Droid, IDroid
     {
         //Class level variables that can be used in this class, or any children of this class
         protected bool hasToolbox;
@@ -57,6 +57,7 @@ namespace cis237assignment4
             this.CalculateBaseCost();
 
             this.totalCost = this.baseCost + this.CalculateCostOfOptions();
+            TotalCost = this.totalCost;
         }
 
         //Overridden ToString method to output the information for this droid.

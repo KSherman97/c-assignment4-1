@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 namespace cis237assignment4
 {
     //Class that is instantiable. It inherits from the abstract droid class
-    class ProtocolDroid : Droid
+    class ProtocolDroid : Droid, IDroid
     {
         //Private variables unique to this class
         protected int numberOfLanguages;
@@ -28,6 +28,7 @@ namespace cis237assignment4
             this.CalculateBaseCost();
             //Calculate the total cost using the result of the base cost
             this.totalCost = this.baseCost + (numberOfLanguages * COST_PER_LANGUAGE);
+            TotalCost = this.totalCost;
         }
 
         //Override the ToString method to use the base ToString, and append new information to it.

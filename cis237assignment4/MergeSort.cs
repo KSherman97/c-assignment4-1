@@ -38,18 +38,27 @@ namespace cis237assignment4
             {
                 aux[k] = a[k];
             }
-            for(int k = low; k <= high; k++)
+            for (int k = low; k <= high; k++)
             {
                 if (i > mid)
-                {
-                    a[k] = aux[j++];
+                { 
+                    a[k] = aux[j++]; 
                 }
                 else
                 {
-                    if (aux[j].CompareTo((T)aux[i]) < 0)
-                    { a[k] = aux[j++]; }
+                    if (j > high)
+                    { 
+                        a[k] = aux[i++]; 
+                    }
                     else
-                        a[k] = aux[i++];
+                    {
+                        if (aux[j].CompareTo((T)aux[i]) < 0)
+                        { 
+                            a[k] = aux[j++]; 
+                        }
+                        else
+                            a[k] = aux[i++];
+                    }
                 }
             }
         }

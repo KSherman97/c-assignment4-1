@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 namespace cis237assignment4
 {
     //Class that inherits from the Utility Droid
-    class AstromechDroid : UtilityDroid
+    class AstromechDroid : UtilityDroid, IDroid
     {
         //class level variables unique to this class. Set as protected so children classes can access them.
         protected bool hasFireExtinguisher;
@@ -54,6 +54,7 @@ namespace cis237assignment4
             this.CalculateBaseCost();
 
             this.totalCost = this.baseCost + this.CalculateCostOfOptions() + this.CalculateCostOfShips();
+            TotalCost = this.totalCost;
         }
 
         //Overriden ToString method to output the information for this droid. Uses work done in the base class
