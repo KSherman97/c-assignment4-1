@@ -12,16 +12,18 @@ namespace cis237assignment4
 {
     class Stack<T>
     {
+        // create a new node class within this class
         protected class Node
         {
             public T Data { get; set; }
             public Node Next { get; set; }
         }
 
-        protected Node _head;
-        protected Node _tail;
-        protected int _size;
+        protected Node _head; // head node
+        protected Node _tail; // tail node
+        protected int _size; // variable to store the size
 
+        // check if the list is empty
         public bool IsEmpty
         {
             get
@@ -30,6 +32,8 @@ namespace cis237assignment4
             }
         }
 
+
+        // get the size ofthe list
         public int Size
         {
             get
@@ -38,43 +42,49 @@ namespace cis237assignment4
             }
         }
 
+
+        // add to the front of the list
         public void AddToFront(T Data) // push
         {
-            Node oldHead = _head;
+            Node oldHead = _head; // assigne the head to the old head
 
-            _head = new Node();
+            _head = new Node(); // create the new head node
 
-            _head.Data = Data;
+            _head.Data = Data; // assigne the new head node some data
 
-            _head.Next = oldHead;
+            _head.Next = oldHead; // set the old head to the next head
 
-            _size++;
+            _size++;    // increment the size
 
-            if (_size == 1)
+            if (_size == 1) // check if there is only 1 node, if so then the head and tail are the same
             {
                 _tail = _head;
             }
         }
 
+        // remove from the front
         public T RemoveFromFront() // pop
         {
+            // check if the node is empty
             if (IsEmpty)
             {
                 throw new Exception("List is empty");
             }
 
-            T returnData = _head.Data;
+            T returnData = _head.Data;  // return the data from the head
 
-            _head = _head.Next;
+            _head = _head.Next; // set the next head to head
 
-            _size--;
+            _size--; // decrement the size
 
+            // check if it's empty, if so then assign null to the 
             if (IsEmpty)
                 _tail = null;
 
-            return returnData;
+            return returnData; // return the data
         }
 
+        // display all node's data
         public void Display()
         {
             Console.WriteLine("The list is: ");

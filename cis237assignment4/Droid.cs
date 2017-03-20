@@ -72,7 +72,7 @@ namespace cis237assignment4
         }
 
         // compare to override. Required since we referenced the icomparable
-        public virtual int CompareTo(Droid thatDroid)
+        public int CompareTo(Droid thatDroid)
         {
             if (TotalCost < thatDroid.totalCost)
                 return -1;
@@ -81,6 +81,7 @@ namespace cis237assignment4
                 return 0;
 
             return 1;
+            //return this.totalCost.CompareTo(thatDroid.TotalCost);
         }
     }
 }

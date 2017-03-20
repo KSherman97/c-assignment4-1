@@ -9,18 +9,18 @@ using System.Threading.Tasks;
 
 namespace cis237assignment4
 {
-    static class MergeSort<T>
+    class MergeSort
     {
 
-        private static IComparable<T>[] aux;
+        private static IComparable<Droid>[] aux;
 
-        public static void Sort(IComparable<T>[] a)
+        public static void Sort(IComparable<Droid>[] a)
         {
-            aux = new IComparable<T>[a.Length];
+            aux = new IComparable<Droid>[a.Length];
             Sort(a, 0, a.Length - 1);
         }
 
-        private static void Sort(IComparable<T>[] a, int low, int high)
+        private static void Sort(IComparable<Droid>[] a, int low, int high)
         {
             if (high <= low)
                 return;
@@ -33,7 +33,7 @@ namespace cis237assignment4
 
         //private static void Sort(IComparable<T>[] a, int low, int high)
 
-        public static void Merge(IComparable<T>[] a, int low, int mid, int high)
+        public static void Merge(IComparable<Droid>[] a, int low, int mid, int high)
         {
             int i = low;
             int j = mid + 1;
@@ -55,7 +55,7 @@ namespace cis237assignment4
                     }
                     else
                     {
-                        if (aux[j].CompareTo((T)aux[i]) < 0)
+                        if (aux[j].CompareTo((Droid)aux[i]) < 0)
                         { 
                             a[k] = aux[j++]; 
                         }

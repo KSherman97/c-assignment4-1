@@ -54,7 +54,7 @@ namespace cis237assignment4
             this.CalculateBaseCost();
 
             this.totalCost = this.baseCost + this.CalculateCostOfOptions() + this.CalculateCostOfShips();
-            TotalCost = this.totalCost;
+            //TotalCost = this.totalCost;
         }
 
         //Overriden ToString method to output the information for this droid. Uses work done in the base class
@@ -66,9 +66,9 @@ namespace cis237assignment4
         }
 
         // compare to override. Required since we referenced the icomparable
-        public override int CompareTo(Droid thatDroid)
-        {
-            return base.CompareTo(thatDroid);
-        }
+        //public override int CompareTo(Droid thatDroid)
+        //{
+        //    return base.CompareTo(thatDroid);
+        //}
     }
 }

@@ -213,6 +213,7 @@ namespace cis237assignment4
         // sort the droidarray by cost 
         public void DroidSortByCost()
         {
+            MergeSort merge = new MergeSort();
             Droid[] SortArray = new Droid[nonNullIndexes(droidCollection)];
             int i = 0;
             while(droidCollection[i] != null)
@@ -221,12 +222,13 @@ namespace cis237assignment4
                 i++;
             }
 
-            MergeSort<Droid>.Sort(SortArray);
-            i = 0;
+            //MergeSort<Droid>.Sort(SortArray);
+            MergeSort.Sort(SortArray);
+            int x = 0;
             foreach (Droid droid in SortArray)
             {
-                droidCollection[i] = SortArray[i];
-                i++;
+                droidCollection[x] = SortArray[x];
+                x++;
             }
         }
     }

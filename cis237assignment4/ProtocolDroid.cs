@@ -32,7 +32,7 @@ namespace cis237assignment4
             this.CalculateBaseCost();
             //Calculate the total cost using the result of the base cost
             this.totalCost = this.baseCost + (numberOfLanguages * COST_PER_LANGUAGE);
-            TotalCost = this.totalCost;
+            //TotalCost = this.totalCost;
         }
 
         //Override the ToString method to use the base ToString, and append new information to it.
@@ -43,9 +43,9 @@ namespace cis237assignment4
         }
 
         // compare to override. Required since we referenced the icomparable
-        public override int CompareTo(Droid thatDroid)
-        {
-            return base.CompareTo(thatDroid);
-        }
+        //public override int CompareTo(Droid thatDroid)
+        //{
+        //    return base.CompareTo(thatDroid);
+        //}
     }
 }
