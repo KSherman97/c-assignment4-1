@@ -72,6 +72,9 @@ namespace cis237assignment4
                     case 3:
                         userInterface.SortByType();
                         break;
+                    case 4:
+                        userInterface.SortByCost();
+                        break;
 
                 }
                 //Re-display the menu, and re-prompt for the choice

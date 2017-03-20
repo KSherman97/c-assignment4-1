@@ -344,5 +344,11 @@ namespace cis237assignment4
             //PrintDroidList();
         }
 
+        public void SortByCost()
+        {
+            dc.DroidSortByCost();
+            PrintDroidList();
+        }
+
     }
 }

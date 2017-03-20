@@ -6,12 +6,12 @@ using System.Threading.Tasks;
 
 namespace cis237assignment4
 {
-    class MergeSort<T>
+    static class MergeSort<T>
     {
 
         private static IComparable<T>[] aux;
 
-        private static void Sort(IComparable<T>[] a)
+        public static void Sort(IComparable<T>[] a)
         {
             aux = new IComparable<T>[a.Length];
             Sort(a, 0, a.Length - 1);

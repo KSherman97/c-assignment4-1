@@ -127,7 +127,7 @@ namespace cis237assignment4
             return returnString;
         }
 
-        private static int nonNullIndexes(Droid[] DroidCollection)
+        private static int nonNullIndexes(IDroid[] DroidCollection)
         {
             int x = 0;
             while(DroidCollection[x] != null)
@@ -210,6 +210,24 @@ namespace cis237assignment4
             {
                 droidCollection[x] = DroidQueue.RemoveFromFront();
                 x++;
+            }
+        }
+        public void DroidSortByCost()
+        {
+            IDroid[] SortArray = new Droid[nonNullIndexes(droidCollection)];
+            int i = 0;
+            while(droidCollection[i] != null)
+            {
+                SortArray[i] = droidCollection[i];
+                i++;
+            }
+
+            MergeSort<Droid>.Sort(SortArray);
+            i = 0;
+            foreach(IDroid droid in SortArray)
+            {
+                droidCollection[i] = SortArray[i];
+                i++;
             }
         }
     }
