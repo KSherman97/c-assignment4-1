@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace cis237assignment4
 {
-    class Stack<Droid> : IComparable<Droid>
+    class Stack<Droid>
     {
         protected class Node
         {

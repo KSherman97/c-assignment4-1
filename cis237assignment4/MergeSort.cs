@@ -34,10 +34,12 @@ namespace cis237assignment4
                 aux[k] = a[k];
             }
         }
+        /**
         public static void MergeSort(IComparable[] a, IComparable[] aux, int low, int mid, int high)
         {
             
         }
 
+         * */
     }
 }

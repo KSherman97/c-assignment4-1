@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace cis237assignment4
 {
-    class Queue<Droid> : IComparable<Droid>
+    class Queue<Droid>
     {
         protected class Node
         {
@@ -20,49 +20,35 @@ namespace cis237assignment4
 
         public bool IsEmpty
         {
-            get
-            {
-                return _head == null;
-            }
+            get { return _head == null; }
         }
 
         public int Size
         {
-            get
-            {
-                return _size;
-            }
+            get { return _size; }
         }
 
-        public void AddToFront(Droid Data)
+        public void AddToBack(Droid Data)
         {
-            Node oldHead = _head;
+            Node oldTail = _tail;
+            _tail = new Node();
+            _tail.Data = Data;
+            _tail.Next = null;
 
-            _head = new Node();
-
-            _head.Data = Data;
-
-            _head.Next = oldHead;
-
-            _size++;
-
-            if (_size == 1)
-            {
-                _tail = _head;
-            }
+            if (IsEmpty)
+                _head = _tail;
+            else
+                oldTail.Next = _tail;
         }
 
         public Droid RemoveFromFront()
         {
-            if(IsEmpty)
-            {
+            if (IsEmpty)
                 throw new Exception("List is empty");
-            }
 
             Droid returnData = _head.Data;
 
             _head = _head.Next;
-
             _size--;
 
             if (IsEmpty)
@@ -74,14 +60,12 @@ namespace cis237assignment4
         public void Display()
         {
             Console.WriteLine("The list is: ");
-
             Node currentNode = _head;
-
-            while (currentNode != null)
+            while(currentNode != null)
             {
                 Console.WriteLine(currentNode.Data);
                 currentNode = currentNode.Next;
             }
         }
-    }
+    } 
 }
