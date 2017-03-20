@@ -10,6 +10,8 @@ namespace cis237assignment4
     //All methods declared in the Interface must be implemented in this class 
     class DroidCollection : IDroidCollection
     {
+        public DroidCollection(){}
+
         //Private variable to hold the collection of droids
         private IDroid[] droidCollection;
         //Private variable to hold the length of the Collection
@@ -123,6 +125,92 @@ namespace cis237assignment4
 
             //return the completed string
             return returnString;
+        }
+
+        private static int nonNullIndexes(Droid[] DroidCollection)
+        {
+            int x = 0;
+            while(DroidCollection[x] != null)
+            {
+                x++;
+            }
+            return x;
+        }
+
+        public void DroidSortByType()
+        {
+            Stack<AstromechDroid> AstromechStack = new Stack<AstromechDroid>();
+            Stack<JanitorDroid> JanitorStack = new Stack<JanitorDroid>();
+            Stack<UtilityDroid> UtilityStack = new Stack<UtilityDroid>();
+            Stack<ProtocolDroid> ProtocolStack = new Stack<ProtocolDroid>();
+
+            Queue<Droid> DroidQueue = new Queue<Droid>();
+            
+            /**
+            for(int i = 0; i < nonNullIndexes(droidCollection); i++)
+            {
+                switch(droidCollection[i].Model)
+                {
+                    case "Protocol":
+                        ProtocolStack.Push((Protocol)DroidCollection[i]);
+                        break;
+                }
+            }
+            **/
+            //For each droid in the droidCollection
+            foreach (IDroid droid in droidCollection)
+            {
+                //If the droid is not null (It might be since the array may not be full)
+                if (droid != null)
+                { 
+                    if (droid is JanitorDroid)
+                    {
+                        JanitorStack.AddToFront((JanitorDroid)droid);
+                        // ProtocolStack.AddToFront((Protocol)DroidInventory[i]);
+                    }
+                    // is the droid of type Astromech?
+                    else if (droid is AstromechDroid)
+                    {
+                        AstromechStack.AddToFront((AstromechDroid)droid);
+                    }
+                    else if (droid is UtilityDroid)
+                    {
+                        UtilityStack.AddToFront((UtilityDroid)droid);
+                    }
+                    // is the droid of type Protocol?
+                    else if (droid is ProtocolDroid)
+                    {
+                        ProtocolStack.AddToFront((ProtocolDroid)droid);
+                    }
+                    // is the droid of type Utility?
+                }
+                   
+            }
+
+            while(!JanitorStack.IsEmpty)
+            {
+                DroidQueue.AddToBack(JanitorStack.RemoveFromFront());
+            }
+            while (!AstromechStack.IsEmpty)
+            {
+                DroidQueue.AddToBack(AstromechStack.RemoveFromFront());
+            }
+            while (!UtilityStack.IsEmpty)
+            {
+                DroidQueue.AddToBack(UtilityStack.RemoveFromFront());
+            }
+            while (!ProtocolStack.IsEmpty)
+            {
+                DroidQueue.AddToBack(ProtocolStack.RemoveFromFront());
+            }
+
+            //Dequeues Droids and places them back in the DroidInventory array
+            int x = 0; //Index Variable
+            while (!DroidQueue.IsEmpty)
+            {
+                droidCollection[x] = DroidQueue.RemoveFromFront();
+                x++;
+            }
         }
     }
 }

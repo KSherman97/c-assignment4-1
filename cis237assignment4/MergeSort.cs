@@ -6,17 +6,18 @@ using System.Threading.Tasks;
 
 namespace cis237assignment4
 {
-    class MergeSort
+    class MergeSort<T>
     {
 
-        private static IComparable[] aux;
-        private static void Sort(IComparable[] a)
+        private static IComparable<T>[] aux;
+
+        private static void Sort(IComparable<T>[] a)
         {
-            aux = new IComparable[a.Length];
+            aux = new IComparable<T>[a.Length];
             Sort(a, 0, a.Length - 1);
         }
 
-        private static void Sort(IComparable[] a, int low, int high)
+        private static void Sort(IComparable<T>[] a, int low, int high)
         {
             if (high <= low)
                 return;
@@ -24,22 +25,33 @@ namespace cis237assignment4
             int mid = low + (high - low) / 2;
             Sort(a, low, mid);
             Sort(a, mid + 1, high);
-            //Merge(a, low, mid, high);
+            Merge(a, low, mid, high);
         }
 
-        public static void Merge(IComparable[] a, IComparable[] aux, int low, int mid, int high)
+        //private static void Sort(IComparable<T>[] a, int low, int high)
+
+        public static void Merge(IComparable<T>[] a, int low, int mid, int high)
         {
+            int i = low;
+            int j = mid + 1;
             for (int k = low; k <= high; k++)
             {
                 aux[k] = a[k];
             }
+            for(int k = low; k <= high; k++)
+            {
+                if (i > mid)
+                {
+                    a[k] = aux[j++];
+                }
+                else
+                {
+                    if (aux[j].CompareTo((T)aux[i]) < 0)
+                    { a[k] = aux[j++]; }
+                    else
+                        a[k] = aux[i++];
+                }
+            }
         }
-        /**
-        public static void MergeSort(IComparable[] a, IComparable[] aux, int low, int mid, int high)
-        {
-            
-        }
-
-         * */
     }
 }

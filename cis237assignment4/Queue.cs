@@ -6,11 +6,11 @@ using System.Threading.Tasks;
 
 namespace cis237assignment4
 {
-    class Queue<Droid>
+    class Queue<T>
     {
         protected class Node
         {
-            public Droid Data { get; set; }
+            public T Data { get; set; }
             public Node Next { get; set; }
         }
 
@@ -28,7 +28,7 @@ namespace cis237assignment4
             get { return _size; }
         }
 
-        public void AddToBack(Droid Data)
+        public void AddToBack(T Data) // queue
         {
             Node oldTail = _tail;
             _tail = new Node();
@@ -41,12 +41,12 @@ namespace cis237assignment4
                 oldTail.Next = _tail;
         }
 
-        public Droid RemoveFromFront()
+        public T RemoveFromFront() // dequeue
         {
             if (IsEmpty)
                 throw new Exception("List is empty");
 
-            Droid returnData = _head.Data;
+            T returnData = _head.Data;
 
             _head = _head.Next;
             _size--;

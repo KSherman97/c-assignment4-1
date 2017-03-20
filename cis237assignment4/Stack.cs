@@ -6,11 +6,11 @@ using System.Threading.Tasks;
 
 namespace cis237assignment4
 {
-    class Stack<Droid>
+    class Stack<T>
     {
         protected class Node
         {
-            public Droid Data { get; set; }
+            public T Data { get; set; }
             public Node Next { get; set; }
         }
 
@@ -34,7 +34,7 @@ namespace cis237assignment4
             }
         }
 
-        public void AddToFront(Droid Data)
+        public void AddToFront(T Data) // push
         {
             Node oldHead = _head;
 
@@ -52,14 +52,14 @@ namespace cis237assignment4
             }
         }
 
-        public Droid RemoveFromFront()
+        public T RemoveFromFront() // pop
         {
             if (IsEmpty)
             {
                 throw new Exception("List is empty");
             }
 
-            Droid returnData = _head.Data;
+            T returnData = _head.Data;
 
             _head = _head.Next;
 
