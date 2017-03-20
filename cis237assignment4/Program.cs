@@ -70,10 +70,10 @@ namespace cis237assignment4
                         break;
                     
                     case 3:
-                        userInterface.SortByType();
+                        droidCollection.DroidSortByType();
                         break;
                     case 4:
-                        userInterface.SortByCost();
+                        droidCollection.DroidSortByCost();
                         break;
 
                 }

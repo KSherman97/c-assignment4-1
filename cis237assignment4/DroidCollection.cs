@@ -13,7 +13,7 @@ namespace cis237assignment4
         public DroidCollection(){}
 
         //Private variable to hold the collection of droids
-        private IDroid[] droidCollection;
+        private IDroid[] droidCollection = new IDroid[100];
         //Private variable to hold the length of the Collection
         private int lengthOfCollection;
 
@@ -166,7 +166,6 @@ namespace cis237assignment4
                     if (droid is JanitorDroid)
                     {
                         JanitorStack.AddToFront((JanitorDroid)droid);
-                        // ProtocolStack.AddToFront((Protocol)DroidInventory[i]);
                     }
                     // is the droid of type Astromech?
                     else if (droid is AstromechDroid)
@@ -184,7 +183,6 @@ namespace cis237assignment4
                     }
                     // is the droid of type Utility?
                 }
-                   
             }
 
             while(!JanitorStack.IsEmpty)
