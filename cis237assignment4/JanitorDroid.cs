@@ -1,4 +1,8 @@
-﻿using System;
+﻿// Kyle Sherman
+// Assignment 4
+// Due 3/20/17
+
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -64,8 +68,8 @@ namespace cis237assignment4
                 "Has Trash Compactor: " + this.hasTrashCompactor + Environment.NewLine +
                 "Has Vacuum: " + this.hasVacuum + Environment.NewLine;
         }
-        
-        //Default CompareTo() defined in Droid is sufficient
+
+        // compare to override. Required since we referenced the icomparable
         public override int CompareTo(Droid thatDroid)
         {
             return base.CompareTo(thatDroid);

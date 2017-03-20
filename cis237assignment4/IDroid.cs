@@ -1,4 +1,7 @@
-﻿using System;
+﻿// Kyle Sherman
+// Assignment 4
+// Due 3/20/17
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;

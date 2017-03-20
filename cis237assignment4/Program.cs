@@ -1,4 +1,8 @@
-﻿using System;
+﻿// Kyle Sherman
+// Assignment 4
+// Due 3/20/17
+
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -70,11 +74,11 @@ namespace cis237assignment4
                         break;
                     
                     case 3:
-                        droidCollection.DroidSortByType();
+                        droidCollection.DroidSortByType(); // sort the droids by model type
                         userInterface.PrintDroidList();
                         break;
                     case 4:
-                        droidCollection.DroidSortByCost();
+                        droidCollection.DroidSortByCost(); // sort the droids by cost
                         userInterface.PrintDroidList();
                         break;
 

@@ -1,4 +1,8 @@
-﻿using System;
+﻿// Kyle Sherman
+// Assignment 4
+// Due 3/20/17
+
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -336,7 +340,7 @@ namespace cis237assignment4
                     break;
             }
         }
-
+        /**
         public void SortByType()
         {
             Console.WriteLine();
@@ -349,6 +353,7 @@ namespace cis237assignment4
             dc.DroidSortByCost();
             //PrintDroidList();
         }
+         * **/
 
     }
 }

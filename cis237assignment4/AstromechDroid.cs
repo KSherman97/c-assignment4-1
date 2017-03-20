@@ -65,7 +65,7 @@ namespace cis237assignment4
                 "Number Of Ships: " + this.numberOfShips + Environment.NewLine;
         }
 
-        //Default CompareTo() defined in Droid is sufficient
+        // compare to override. Required since we referenced the icomparable
         public override int CompareTo(Droid thatDroid)
         {
             return base.CompareTo(thatDroid);

@@ -1,4 +1,8 @@
-﻿using System;
+﻿// Kyle Sherman
+// Assignment 4
+// Due 3/20/17
+
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -67,6 +71,7 @@ namespace cis237assignment4
                     "Color: " + this.color + Environment.NewLine;
         }
 
+        // compare to override. Required since we referenced the icomparable
         public virtual int CompareTo(Droid thatDroid)
         {
             if (TotalCost < thatDroid.totalCost)

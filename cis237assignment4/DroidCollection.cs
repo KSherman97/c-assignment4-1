@@ -1,4 +1,7 @@
-﻿using System;
+﻿// Kyle Sherman
+// Assignment 4
+// Due 3/20/17
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -127,64 +130,73 @@ namespace cis237assignment4
             return returnString;
         }
 
+        // this method will count how many indexes there are in the array 
+        // that have non-null values
         private static int nonNullIndexes(IDroid[] DroidCollection)
         {
-            int x = 0;
-            while(DroidCollection[x] != null)
+            int index = 0;
+            while (DroidCollection[index] != null)
             {
-                x++;
+                index++;
             }
-            return x;
+            return index;
         }
 
+        // method to sort the droid by the type
         public void DroidSortByType()
         {
-            Stack<AstromechDroid> AstromechStack = new Stack<AstromechDroid>();
-            Stack<JanitorDroid> JanitorStack = new Stack<JanitorDroid>();
-            Stack<UtilityDroid> UtilityStack = new Stack<UtilityDroid>();
-            Stack<ProtocolDroid> ProtocolStack = new Stack<ProtocolDroid>();
+            Stack<AstromechDroid> AstromechStack = new Stack<AstromechDroid>(); // create a new stack for astromech
+            Stack<JanitorDroid> JanitorStack = new Stack<JanitorDroid>();       // create a new stack for janitor
+            Stack<UtilityDroid> UtilityStack = new Stack<UtilityDroid>();       // create a new stack for utility
+            Stack<ProtocolDroid> ProtocolStack = new Stack<ProtocolDroid>();    // create a new stack for Protocol 
 
-            Queue<Droid> DroidQueue = new Queue<Droid>();
+            Queue<Droid> DroidQueue = new Queue<Droid>();                       // initialize a new queue
             //For each droid in the droidCollection
             foreach (IDroid droid in droidCollection)
             {
                 //If the droid is not null (It might be since the array may not be full)
                 if (droid != null)
                 { 
+                    // is the droid type JanitorDroid?
                     if (droid is JanitorDroid)
                     {
-                        JanitorStack.AddToFront((JanitorDroid)droid);
+                        JanitorStack.AddToFront((JanitorDroid)droid); // add the droid to the front of the stack
                     }
                     // is the droid of type Astromech?
                     else if (droid is AstromechDroid)
                     {
-                        AstromechStack.AddToFront((AstromechDroid)droid);
+                        AstromechStack.AddToFront((AstromechDroid)droid);// add the droid to the front of the stack
                     }
+                    // is the droid of type Utility?
                     else if (droid is UtilityDroid)
                     {
-                        UtilityStack.AddToFront((UtilityDroid)droid);
+                        UtilityStack.AddToFront((UtilityDroid)droid);// add the droid to the front of the stack
                     }
                     // is the droid of type Protocol?
                     else if (droid is ProtocolDroid)
                     {
-                        ProtocolStack.AddToFront((ProtocolDroid)droid);
+                        ProtocolStack.AddToFront((ProtocolDroid)droid);// add the droid to the front of the stack
                     }
-                    // is the droid of type Utility?
+                    
                 }
             }
 
+           // while the janitor stack is not empty then keep queueing them
             while(!JanitorStack.IsEmpty)
             {
                 DroidQueue.AddToBack(JanitorStack.RemoveFromFront());
             }
+            // while the astromech stack is not empty then keep queueing them
             while (!AstromechStack.IsEmpty)
             {
                 DroidQueue.AddToBack(AstromechStack.RemoveFromFront());
             }
+            // while the utility stack is not empty then keep queueing them
             while (!UtilityStack.IsEmpty)
             {
                 DroidQueue.AddToBack(UtilityStack.RemoveFromFront());
             }
+            // while the Protocol stack is not empty then keep queueing them
             while (!ProtocolStack.IsEmpty)
             {
                 DroidQueue.AddToBack(ProtocolStack.RemoveFromFront());
@@ -194,10 +206,11 @@ namespace cis237assignment4
             int x = 0; //Index Variable
             while (!DroidQueue.IsEmpty)
             {
-                droidCollection[x] = DroidQueue.RemoveFromFront();
+                droidCollection[x] = DroidQueue.RemoveFromFront(); // dequeue the droids until the queue is empty
                 x++;
             }
         }
+        // sort the droidarray by cost 
         public void DroidSortByCost()
         {
             Droid[] SortArray = new Droid[nonNullIndexes(droidCollection)];
